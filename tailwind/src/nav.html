@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voitures de Luxe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../public/style.css"/>
+  </head>
+  <body class="bg-[#F7F3EE]">
+
+    <nav
+      class="flex justify-between items-center py-4 px-4 sm:px-10 bg-page-bg relative"
+    >
+      <div class="flex items-center">
+       
+        <button
+          id="menu-btn"
+          class="block sm:hidden text-gray-700 focus:outline-none"
+        >
+          <svg
+            id="burger-icon"
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+
+      
+        <ul
+          id="menu"
+          class="hidden absolute top-full left-0 w-full bg-transparent sm:flex sm:relative sm:top-0 sm:bg-transparent gap-4 sm:gap-6 text-gray-600 font-semibold"
+        >
+          <li>
+            <a href="#" class="block px-4 py-2 sm:p-0 hover:text-black"
+              >Modèles</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 sm:p-0 hover:text-black"
+              >Achats</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 sm:p-0 hover:text-black"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 sm:p-0 hover:text-black"
+              >Marque</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <img src="../image/logo.png" alt="Logo" class="h-12" />
+
+      <div class="flex items-center gap-4">
+        <input
+          type="text"
+          placeholder="Rechercher"
+          class="hidden sm:block px-4 py-2 border rounded-full text-sm w-full sm:w-auto"
+        />
+        <a href="voice.html">
+          <img src="../image/voice.png" class="w-5 cursor-pointer"
+        /></a>
+        <a href="../../vcall/vcall.html">
+          <img src="../image/notification.png" class="w-6 cursor-pointer"
+        /></a>
+        <img src="../image/profil.png" class="w-6 cursor-pointer" />
+      </div>
+    </nav>
+
+    <script>
+   
+      document
+        .getElementById("menu-btn")
+        .addEventListener("click", function () {
+          document.getElementById("menu").classList.toggle("hidden");
+        });
+    </script>
+  </body>
+</html>

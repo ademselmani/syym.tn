@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr" class="bg-custom-bg text-custom-text font-poppins">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VCall - Nouvelle Classe G</title>
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Icons (for icon text like 'videocam', 'mic', etc.) -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <!-- Tailwind CSS compiled file -->
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <!-- Header / Title & Meeting Info -->
+    <header
+      class="w-full p-4 border-b border-gray-300 flex items-center justify-between"
+    >
+      <!-- Left: Small video icon + Title/Date -->
+      <div class="flex items-center space-x-2">
+        <!-- Circle with video icon -->
+        <div
+          class="w-8 h-8 bg-custom-button rounded-full flex items-center justify-center"
+        >
+          <span class="material-icons text-white text-base">videocam</span>
+        </div>
+        <!-- Title & Date -->
+        <div>
+          <h1 class="text-xl md:text-2xl font-semibold">
+            Des questions sur la Nouvelle Classe G
+          </h1>
+          <p class="text-sm md:text-base text-gray-600">
+            Janvier 02, 2025 | 09:00 AM
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: User Avatar & Name -->
+      <div
+        class="flex items-center space-x-2 bg-white px-3 py-2 rounded-full shadow-sm"
+      >
+        <img
+          src="./a.png"
+          alt="Adam Joseph"
+          class="w-8 h-8 rounded-full object-cover"
+        />
+        <div class="flex flex-col leading-tight">
+          <span class="text-sm font-medium text-gray-700">Adam Joseph</span>
+          <span class="text-xs text-gray-500">expert</span>
+        </div>
+        <!-- Optional 3-dot button (remove if not needed) -->
+        <button class="text-gray-400 hover:text-gray-600">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <circle cx="5" cy="12" r="1.5" />
+            <circle cx="12" cy="12" r="1.5" />
+            <circle cx="19" cy="12" r="1.5" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content (Two-column layout) -->
+    <main class="flex-1 flex flex-col md:flex-row p-4 gap-4">
+      <!-- Left Column: Video Calls -->
+      <section class="w-full md:w-2/3 flex flex-col gap-4">
+        <!-- Top: Adam's Video Call -->
+        <div
+          class="relative rounded-md shadow p-4 flex flex-col items-center justify-center"
+        >
+          <!-- Main Video (Adam) -->
+          <div
+            class="h-64 md:h-80 bg-gray-200 rounded-md overflow-hidden flex items-center justify-center"
+          >
+            <!-- Replace with your actual stream or image -->
+            <img
+              src="./adem.png"
+              alt="Adam Joseph Video"
+              class="h-full object-cover"
+            />
+          </div>
+          <!-- Name -->
+          <p class="mt-2 text-sm md:text-base font-medium">Adam Joseph</p>
+        </div>
+
+        <!-- Bottom: Yosra's Video Call -->
+        <div class="rounded-md p-4 flex flex-col items-center justify-center">
+          <div
+            class="h-40 md:h-48 bg-gray-200 rounded-md overflow-hidden flex items-center justify-center"
+          >
+            <!-- Replace with Yosra's actual stream or image -->
+            <img
+              src="./yosramahjoub.png"
+              alt="Yosra Mahjoub"
+              class="h-full object-cover"
+            />
+          </div>
+          <!-- Name -->
+          <p class="mt-2 text-sm md:text-base font-medium">Yosra Mahjoub</p>
+        </div>
+        <!-- Footer / Call Controls -->
+        <footer class="w-full p-4 border-t border-gray-300 mt-4">
+          <!-- Center row -->
+          <div class="flex items-center justify-center space-x-6">
+            <!-- Icon group -->
+            <div class="flex space-x-4">
+              <button
+                class="w-10 h-10 rounded-full bg-custom-button text-white flex items-center justify-center hover:bg-blue-700"
+              >
+                <span class="material-icons text-white text-xl">videocam</span>
+              </button>
+              <button
+                class="w-10 h-10 rounded-full bg-custom-button text-white flex items-center justify-center hover:bg-blue-700"
+              >
+                <span class="material-icons text-white text-xl">mic</span>
+              </button>
+              <button
+                class="w-10 h-10 rounded-full bg-custom-button text-white flex items-center justify-center hover:bg-blue-700"
+              >
+                <span class="material-icons text-white text-xl"
+                  >screen_share</span
+                >
+              </button>
+              <button
+                class="w-10 h-10 rounded-full bg-custom-button text-white flex items-center justify-center hover:bg-blue-700"
+              >
+                <span class="material-icons text-white text-xl">chat</span>
+              </button>
+            </div>
+
+            <!-- End call button -->
+            <button
+              class="bg-custom-endcall text-white px-6 py-2 rounded-md hover:bg-red-600"
+            >
+              Terminer l'appel
+            </button>
+          </div>
+        </footer>
+      </section>
+
+      <!-- Right Column: Chat Section -->
+      <section
+        class="hidden md:flex md:flex-col w-full md:w-1/3 bg-white border border-gray-200 rounded-lg shadow-lg"
+      >
+        <!-- Chat Header -->
+        <div
+          class="flex items-center justify-between px-4 py-3 border-b border-gray-200"
+        >
+          <h2 class="text-base font-semibold text-gray-800">Discussions</h2>
+          <div class="flex items-center space-x-2">
+            <!-- "Groupe" button (active) -->
+            <button
+              class="px-3 py-1 rounded-full bg-custom-button text-white text-sm"
+            >
+              Groupe
+            </button>
+            <!-- "Personnel" button (inactive) -->
+            <button
+              class="px-3 py-1 rounded-full bg-gray-200 text-sm text-gray-800"
+            >
+              Personnel
+            </button>
+          </div>
+        </div>
+
+        <!-- Messages -->
+        <div class="flex-1 p-4 space-y-4 overflow-auto">
+          <!-- Yosra's message -->
+          <div class="flex items-start">
+            <!-- Avatar -->
+            <img
+              src="./yosra.png"
+              alt="Yosra mahjoub"
+              class="w-10 h-10 rounded-full mr-3 object-cover"
+            />
+            <!-- Message bubble -->
+            <div class="bg-gray-100 rounded-lg p-3 flex-1">
+              <!-- Name & Time -->
+              <div class="flex justify-between items-center mb-1">
+                <p class="text-sm font-semibold text-gray-700">Yosra mahjoub</p>
+                <span class="text-xs text-gray-400">11:01 AM</span>
+              </div>
+              <!-- Message text -->
+              <p class="text-sm text-gray-800">
+                Bonjour.<br />
+                Nous commencerons cette réunion?
+              </p>
+            </div>
+          </div>
+
+          <!-- Adam's message -->
+          <div class="flex items-start">
+            <!-- Avatar -->
+            <img
+              src="./a.png"
+              alt="Adam Joseph"
+              class="w-10 h-10 rounded-full mr-3 object-cover"
+            />
+            <!-- Message bubble -->
+            <div class="bg-gray-100 rounded-lg p-3 flex-1">
+              <!-- Name & Time -->
+              <div class="flex justify-between items-center mb-1">
+                <p class="text-sm font-semibold text-gray-700">Adam Joseph</p>
+                <span class="text-xs text-gray-400">11:02 AM</span>
+              </div>
+              <!-- Message text -->
+              <p class="text-sm text-gray-800">
+                Oui, nous allons commencer cette réunion
+              </p>
+            </div>
+          </div>
+
+          <!-- Yosra's message again -->
+          <div class="flex items-start">
+            <!-- Avatar -->
+            <img
+              src="./yosra.png"
+              alt="Yosra mahjoub"
+              class="w-10 h-10 rounded-full mr-3 object-cover"
+            />
+            <!-- Message bubble -->
+            <div class="bg-gray-100 rounded-lg p-3 flex-1">
+              <!-- Name & Time -->
+              <div class="flex justify-between items-center mb-1">
+                <p class="text-sm font-semibold text-gray-700">Yosra mahjoub</p>
+                <span class="text-xs text-gray-400">11:04 AM</span>
+              </div>
+              <!-- Message text -->
+              <p class="text-sm text-gray-800">merci Adam je vous attends</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input area -->
+        <div
+          class="px-4 py-2 border-t border-gray-200 flex items-center space-x-2"
+        >
+          <input
+            type="text"
+            placeholder="Tapez quelque chose..."
+            class="flex-1 border border-gray-300 rounded-full px-3 py-2 text-sm focus:outline-none"
+          />
+          <button
+            class="p-2 bg-custom-button text-white rounded-full hover:bg-blue-700"
+            title="Envoyer"
+          >
+            <!-- Send icon (paper plane) -->
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M2.01 21l20.03-9L2.01 3v7l15 2-15 2z"></path>
+            </svg>
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+/** @format */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f7f3ee !important;
+}
+.chat-blue {
+  background-color: #4169e1 !important;
+}
+.savoir-plus {
+  background-color: #4169e1 !important;
+}
+.chat-bubble {
+  max-width: 80%;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+}
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: transparent !important;
+  align-items: center;
+  justify-content: center;
+}

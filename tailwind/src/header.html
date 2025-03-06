@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voitures de Luxe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../public/style.css"/>
+</head>
+<body class="bg-[#F7F3EE]">
+
+    <div id="nav-container"></div>
+
+    <script>
+      fetch("nav.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("nav-container").innerHTML = data;
+        })
+        .catch((error) =>
+          console.error("Erreur lors du chargement du nav:", error)
+        );
+    </script>
+
+    <section class="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-40 py-12 sm:py-28">
+        
+        <div class="max-w-xs sm:max-w-xl text-center sm:text-left">
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight">
+                Qualité, <br> Sécurité, <br> Transparence.
+            </h1>
+            <button class="mt-6 px-6 py-3 bg-blue-600 text-white rounded-full text-lg font-semibold hover:bg-blue-700 transition">
+                Accéder au stock complet →
+            </button>
+        </div>
+        <div class="flex justify-end w-full sm:w-auto mt-12 sm:mt-0 pr-10 sm:pr-20">
+          <img
+            src="../image/cars.png"
+            alt="Voiture de luxe"
+            class="w-full sm:w-[90%] md:w-[110%] lg:w-[120%] h-auto object-contain"
+          />
+        </div>
+        
+        
+    </section>
+    
+    <div id="listv-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+
+
+    <script>
+fetch("liste-vehicule.html")
+  .then((response) => response.text())
+  .then((data) => {
+    let container = document.getElementById("listv-container");
+    container.innerHTML = data;
+
+ 
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(data, "text/html");
+    const scripts = doc.getElementsByTagName("script");
+    
+    for (let script of scripts) {
+      const newScript = document.createElement("script");
+      newScript.textContent = script.textContent;
+      document.body.appendChild(newScript);
+    }
+  })
+  .catch((error) =>
+    console.error("Erreur lors du chargement de liste-vehicule.html:", error)
+  );
+    </script>
+    
+    <script>
+        document.getElementById("menu-btn").addEventListener("click", function() {
+            document.getElementById("menu").classList.toggle("hidden");
+        });
+    </script>
+<div id="fin-container"></div>
+
+
+<script>
+  fetch("fin.html")
+    .then((response) => response.text())
+    .then((data) => {
+      
+      document.getElementById("fin-container").innerHTML = data;
+    })
+    .catch((error) =>
+      console.error("Erreur lors du chargement du footer:", error)
+    );
+</script>
+<hr class="my-8 border-gray-300 w-3/4 mx-auto" />
+
+<div id="footer-container"></div>
+
+
+<script>
+  fetch("footer.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("footer-container").innerHTML = data;
+    })
+    .catch((error) =>
+      console.error("Erreur lors du chargement du footer:", error)
+    );
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire de Rendez-vous</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../public/style.css"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-page-bg font-poppins">
+    <div id="nav-container"></div>
+
+    <script>
+      fetch("nav.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("nav-container").innerHTML = data;
+        })
+        .catch((error) =>
+          console.error("Erreur lors du chargement du nav:", error)
+        );
+    </script>
+    <div id="detail-container"></div>
+
+    <script>
+      fetch("detail.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("detail-container").innerHTML = data;
+        })
+        .catch((error) =>
+          console.error("Erreur lors du chargement du nav:", error)
+        );
+    </script>
+    <main class="container mx-auto px-4 py-8 max-w-4xl">
+      <h1 class="text-3xl font-bold text-center mb-8">
+        Prendre un rendez-vous
+      </h1>
+
+      <form class="space-y-6">
+        <!-- Section Rendez-vous -->
+        <section class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-xl font-semibold mb-4">Remplissez le formulaire!</h2>
+          <p class="text-gray-600 mb-6">
+            Notre équipe vous répondra dans les plus brefs délais
+          </p>
+
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium mb-1"
+                >Type de rendez-vous</label
+              >
+              <select
+                class="w-full p-2 border rounded-md focus:ring-2 focus:ring-primary"
+              >
+                <option>En ligne</option>
+                <option>Sur place</option>
+              </select>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Date</label>
+                <input
+                  type="date"
+                  class="w-full p-2 border rounded-md focus:ring-2 focus:ring-primary"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium mb-1"
+                  >Durée estimée</label
+                >
+                <input
+                  type="number"
+                  min="15"
+                  step="15"
+                  class="w-full p-2 border rounded-md focus:ring-2 focus:ring-primary"
+                  placeholder="Minutes"
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-1"
+                >Heure préférée</label
+              >
+              <input
+                type="time"
+                class="w-full p-2 border rounded-md focus:ring-2 focus:ring-primary"
+                required
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- Section Données personnelles -->
+        <section class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-xl font-semibold mb-4">Données personnelles</h2>
+
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium mb-1">Nom complet</label>
+              <input
+                type="text"
+                class="w-full p-2 border rounded-md focus:ring-2 focus:ring-primary"
+                required
+              />
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Email</label>
+                <input
+                  type="email"
+                  class="w-full p-2 border rounded-md focus:ring-2 focus:ring-primary"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium mb-1">Téléphone</label>
+                <input
+                  type="number"
+                  class="w-full p-2 border rounded-md focus:ring-2 focus:ring-primary"
+                  required
+                  inputmode="numeric"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Consentement -->
+        <div class="flex items-start space-x-2">
+          <input type="checkbox" class="mt-1" required />
+          <p class="text-sm text-gray-600">
+            Conformément à la LGPD, j'accepte de fournir les données ci-dessus
+            afin que Touring Cars puisse me contacter...
+          </p>
+        </div>
+
+        <button
+          class="bg-primary text-white py-3 px-6 rounded-md hover:bg-primary-dark transition-colors"
+        >
+          Envoyer la demande
+        </button>
+      </form>
+    </main>
+
+    <hr class="my-8 border-gray-300 w-3/4 mx-auto" />
+
+    <div id="footer-container"></div>
+
+    <script>
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-container").innerHTML = data;
+        })
+        .catch((error) =>
+          console.error("Erreur lors du chargement du footer:", error)
+        );
+    </script>
+  </body>
+</html>
